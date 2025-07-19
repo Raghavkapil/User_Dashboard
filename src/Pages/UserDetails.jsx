@@ -4,7 +4,7 @@ import axios from 'axios';
 import { HeadContext } from '../Components/Context';
 
 export default function UserDetails() {
-  const {setHeading} = useContext(HeadContext);
+  const { setHeading } = useContext(HeadContext);
 
 
   const { id } = useParams();
@@ -14,7 +14,7 @@ export default function UserDetails() {
   const [albums, setAlbums] = useState([]);
   const [tab, setTab] = useState('posts');
 
-  
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +28,7 @@ export default function UserDetails() {
     fetchData();
   }, [id]);
 
-  useEffect(()=>{
+  useEffect(() => {
     setHeading("User Details");
   }, [user, setHeading]);
 
@@ -38,12 +38,22 @@ export default function UserDetails() {
     <div className="p-4">
       <button onClick={() => navigate('/')} className="btn btn-outline mb-4">← Back to List</button>
 
-      <div className="card bg-base-200 p-4 mb-6">
+      <div className="flex-row card bg-base-200 p-4 mb-6">
+        <div className="mr-4 mt-2 gap-4" >
+          <img
+            loading="lazy"
+            src="/Img.png"
+            alt="Profile"
+            className=" object-cover aspect-square h-20"
+          />
+        </div>
+        <div className='flex-col'>
         <h2 className="card-title">{user.name}</h2>
         <p><b>Email:</b> {user.email}</p>
         <p><b>Phone:</b> {user.phone}</p>
         <p><b>Address:</b> {user.address.street}, {user.address.city}</p>
         <p><b>Company:</b> {user.company.name}</p>
+        </div>
       </div>
 
       <div role="tablist" className="tabs tabs-boxed mb-4 ">

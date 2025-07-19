@@ -12,14 +12,13 @@ export default function ThemeToggle() {
     document.documentElement.setAttribute('data-theme', newTheme);
   };
 
-  // Ensure theme applies on load
   useEffect(() => {
     const theme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', theme);
   }, []);
 
   return (
-    <div className="fixed top-4 right-4 z-10 flex items-center gap-2">
+    <div className=" top-4 right-4 z-10 absolute items-center gap-2">
       <span className="text-sm">{isDark ? 'Dark' : 'Light'}</span>
       <input
         type="checkbox"

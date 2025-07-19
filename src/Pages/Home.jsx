@@ -8,9 +8,9 @@ export default function Home() {
   const [users, setUsers] = useState([]);
   const { setHeading } = useContext(HeadContext);
 
-  useEffect(()=>{
+  useEffect(() => {
     setHeading("User Dashboard");
-  },[setHeading]);                
+  }, [setHeading]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,10 +26,20 @@ export default function Home() {
           className="card bg-base-200 shadow-lg hover:scale-[1.02] transition cursor-pointer"
           onClick={() => navigate(`/user/${user.id}`)}
         >
-          <div className="card-body">
+          <div className="flex-row card-body">
+            <div>
+            <img
+              loading="lazy"
+              src="/Img.png"
+              alt="User Icon"
+              className="w-auto h-20 rounded-full object-cover"
+            />
+            </div >
+            <div className="flex-col">
             <h2 className="card-title">{user.name}</h2>
             <p><b>Email:</b> {user.email}</p>
             <p><b>City:</b> {user.address.city}</p>
+            </div>
           </div>
         </div>
       ))}
