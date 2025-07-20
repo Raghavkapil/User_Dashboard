@@ -1,0 +1,13 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+   // height: clamp(1rem, 4vw, 4rem);
+   .heading{
+        font-size: clamp(1.25rem, 2.7vw, 1.8rem);
+        font-weight: bold;
+        color: white;
+    }
+
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { HeadContext } from '../Components/Context';
+import './Home.scss';
 
 
 export default function Home() {
@@ -26,8 +27,9 @@ export default function Home() {
           className="card bg-base-200 shadow-lg hover:scale-[1.02] transition cursor-pointer"
           onClick={() => navigate(`/user/${user.id}`)}
         >
+          <div className='card'>
           <div className="flex-row card-body">
-            <div>
+            <div className='image-container'>
             <img
               loading="lazy"
               src="/Img.png"
@@ -40,6 +42,7 @@ export default function Home() {
             <p><b>Email:</b> {user.email}</p>
             <p><b>City:</b> {user.address.city}</p>
             </div>
+          </div>
           </div>
         </div>
       ))}
