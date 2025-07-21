@@ -27,14 +27,14 @@ export default function Home() {
           className="card bg-base-200 shadow-lg hover:scale-[1.02] transition cursor-pointer"
           onClick={() => navigate(`/user/${user.id}`)}
         >
-          <div className='card'>
-          <div className="flex-row card-body">
-            <div className='image-container'>
+          <div className='card '>
+          <div className="flex-row card-body ">
+            <div className='image-container content-center mx-1'>
             <img
               loading="lazy"
               src="/Img.png"
               alt="User Icon"
-              className="w-auto h-20 rounded-full object-cover"
+              className="rounded-full object-cover  "
             />
             </div >
             <div className="flex-col">

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { HeadContext } from '../Components/Context';
+import './UserDetails.scss'
 
 export default function UserDetails() {
   const { setHeading } = useContext(HeadContext);
@@ -38,13 +39,14 @@ export default function UserDetails() {
     <div className="p-4">
       <button onClick={() => navigate('/')} className="btn btn-outline mb-4">← Back to List</button>
 
-      <div className="flex-row card bg-base-200 p-4 mb-6">
-        <div className="mr-4 mt-2 gap-4" >
+      <div className="flex-row userCard bg-base-200 p-4 mb-6">
+        <div className="card-body flex-row">
+        <div className="content-center" >
           <img
             loading="lazy"
             src="/Img.png"
             alt="Profile"
-            className=" object-cover aspect-square h-20"
+            className=" object-cover rounded-lg aspect-square h-20"
           />
         </div>
         <div className='flex-col'>
@@ -55,7 +57,7 @@ export default function UserDetails() {
         <p><b>Company:</b> {user.company.name}</p>
         </div>
       </div>
-
+</div>
       <div role="tablist" className="tabs tabs-boxed mb-4 ">
         <a role="tab" className={`mr-4 btn  tab ${tab === 'posts' && 'tab-active btn-active'}`} onClick={() => setTab('posts')}>Posts</a>
         <a role="tab" className={`btn e tab ${tab === 'albums' && 'tab-active btn-active'}`} onClick={() => setTab('albums')}>Albums</a>

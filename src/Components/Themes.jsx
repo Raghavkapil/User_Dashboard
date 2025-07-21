@@ -18,7 +18,7 @@ export default function ThemeToggle() {
   }, []);
 
   return (
-    <div className=" top-5 right-3 z-10 absolute items-center gap-2">
+    <div className=" top-5 right-1 z-10 absolute items-center gap-2">
       <span className="text-xxs">{isDark ? 'Dark ' : 'Light '}</span>
       <input
         type="checkbox"

@@ -1,0 +1,50 @@
+ .userCard{
+    @media (max-width: 350px) {
+        padding: 0px;
+        height: clamp(fit-content, 22vh, 20rem);
+        width: clamp(13rem, 90vw, 25rem);
+        .card-body{
+            margin-left: 4%;
+            padding: 0px;
+            transition-duration: 0.5s;
+            p{
+                font-size: clamp(0.5rem, 3.5vw, 1.25rem);
+            }
+            
+            .card-title{
+                font-size: clamp(0.9rem, 5vw, 1.5rem);
+            }
+
+            img{
+                aspect-ratio: 1/1;
+                width: max(3.7rem, 20vw);
+                height: auto;
+            }
+        }
+        
+    }
+    .card-body{
+        padding: 0px;
+    }
+//     height: clamp(5rem, 65vh, 20rem);
+    
+//     width: clamp(20rem, 30vw, 25rem);
+    //.card-body{
+    
+    // align-items: anchor-center;
+    // font-size: 1.25vw;
+    // font-size: clamp(0.6rem, 1.25vw, 1.25rem);
+    // .image-container{
+    //     aspect-ratio: 1/1;
+    //      width: max(3.5rem,7vw);
+    //    height: auto;
+    //     // height: max(3rem, 7vh);
+    //     // width: auto;
+        
+    // }
+    
+    // .card-title{
+    //     // font-size: clamp(0.9rem, 1.75vw, 1.5rem);
+    // }
+//}
+}
