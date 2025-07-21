@@ -1,10 +1,10 @@
- .card{
+ .homeCard-container{
     @media (max-width: 350px) {
         padding: 6px;
         justify-content: center;
         height: clamp(fit-content, 22vh, 20rem);
         width: clamp(13rem, 90vw, 25rem);
-        .card-body{
+        .homeCard-body{
             margin-left: 4%;
             align-items: anchor-center;
             padding: 0px;
@@ -27,7 +27,7 @@
         }
         
     }
-    .card-body{
+    .homeCard-body{
         img{
             aspect-ratio: 1/1;
             height: clamp(3rem,12vh, 5em);

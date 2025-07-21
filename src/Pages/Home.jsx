@@ -1,16 +1,15 @@
-import React, { useEffect, useState, useContext } from 'react';
+import  { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { HeadContext } from '../Components/Context';
 import './Home.scss';
-
 
 export default function Home() {
   const [users, setUsers] = useState([]);
   const { setHeading } = useContext(HeadContext);
 
   useEffect(() => {
-    setHeading("User Dashboard");
+    setHeading('User Dashboard');
   }, [setHeading]);
   const navigate = useNavigate();
 
@@ -27,22 +26,22 @@ export default function Home() {
           className="card bg-base-200 shadow-lg hover:scale-[1.02] transition cursor-pointer"
           onClick={() => navigate(`/user/${user.id}`)}
         >
-          <div className='card '>
-          <div className="flex-row card-body ">
-            <div className='image-container content-center mx-1'>
-            <img
-              loading="lazy"
-              src="/Img.png"
-              alt="User Icon"
-              className="rounded-full object-cover  "
-            />
-            </div >
-            <div className="flex-col">
-            <h2 className="card-title">{user.name}</h2>
-            <p><b>Email:</b> {user.email}</p>
-            <p><b>City:</b> {user.address.city}</p>
+          <div className='card homeCard-container'>
+            <div className="flex-row card-body homeCard-body ">
+              <div className='image-container content-center mx-1'>
+                <img
+                  loading="lazy"
+                  src="/Img.png"
+                  alt="User Icon"
+                  className="rounded-full object-cover  "
+                />
+              </div >
+              <div className="flex-col">
+                <h2 className="card-title">{user.name}</h2>
+                <p><b>Email:</b> {user.email}</p>
+                <p><b>City:</b> {user.address.city}</p>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       ))}
